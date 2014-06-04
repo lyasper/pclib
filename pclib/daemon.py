@@ -139,7 +139,8 @@ class Daemon:
         """
 
 def printfile(fine):
-    with open(fine) as f: for l in f: print l.rstrip()
+    with open(fine) as f: 
+        for l in f: print l.rstrip()
 
 def DaemonizeIt(longlivingfun):
     '''
