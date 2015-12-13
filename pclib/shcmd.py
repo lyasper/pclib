@@ -23,6 +23,9 @@ class ShellResult:
         else:
             return False
 
+def syncexec_simple(*args, **kargs):
+    pass
+
 # doesn't support output checking. simple return the exit code only.
 def syncexec(shellcmds, logcmd=False, logrst=False, outputfile=sys.stdout):
     if not shellcmds:
@@ -155,6 +158,8 @@ def syncexec_generater(shellcmds, t=600, logcmd=False, logrst=False, outputfile=
                 break
         count -= 1
         time.sleep(0.5)
+    else:
+        raise Exception("command failed:{0}".format(shellcmds))
     return
 
 def main():
